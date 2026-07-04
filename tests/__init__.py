@@ -1,1 +1,1 @@
-# Tests for optimize-arm-iot
+# Tests for arm-optimize-iot

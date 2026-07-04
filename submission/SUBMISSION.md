@@ -4,7 +4,7 @@
 
 **Project:** Hybrid Threshold + LLM Triage Pipeline on Raspberry Pi 5
 
-**Repository:** [https://github.com/stanleyoz/optimize-arm-iot](https://github.com/stanleyoz/optimize-arm-iot)
+**Repository:** [https://github.com/stanleyoz/arm-optimize-iot](https://github.com/stanleyoz/arm-optimize-iot)
 
 **License:** Apache 2.0
 
@@ -121,8 +121,8 @@ The LLM always produces **valid JSON** with three fields: `alert` (bool), `reaso
 ### Step 1 — Clone and setup
 
 ```bash
-git clone https://github.com/stanleyoz/optimize-arm-iot.git
-cd optimize-arm-iot
+git clone https://github.com/stanleyoz/arm-optimize-iot.git
+cd arm-optimize-iot
 ./setup.sh
 ```
 
@@ -239,7 +239,7 @@ Under 2000ms: 41/41
 ## Repository Structure
 
 ```
-optimize-arm-iot/
+arm-optimize-iot/
 ├── LICENSE                     # Apache 2.0
 ├── README.md                   # This file
 ├── setup.sh                    # One-command environment build

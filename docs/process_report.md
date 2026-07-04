@@ -69,7 +69,7 @@ Qwen2-0.5B at Q4_K_M **cannot follow JSON instructions** reliably. The few-shot 
 ### 3.1 Project Structure
 
 ```
-optimize-arm-iot/
+arm-optimize-iot/
 ├── src/
 │   ├── alerting/
 │   │   ├── alert_actions.py      # Alert dispatch (log, GPIO, notify)
@@ -280,7 +280,7 @@ python3 -m src.alerting.alert_engine --data data/test.csv
 ## 9. Files on Dev Machine
 
 ```
-/home/stanl/projects/optimize-arm-iot/
+/home/stanl/projects/arm-optimize-iot/
 ├── models/
 │   ├── qwen2-0.5b-hf/               # Original HF model (953 MB)
 │   ├── qwen2-0.5b-fp16.gguf         # FP16 GGUF (949 MB)

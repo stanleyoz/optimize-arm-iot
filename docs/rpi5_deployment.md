@@ -15,8 +15,8 @@ sudo apt update && sudo apt install -y \
     libopenblas-dev
 
 # Clone the project
-git clone <repo-url> /home/pi/optimize-arm-iot
-cd /home/pi/optimize-arm-iot
+git clone <repo-url> /home/pi/arm-optimize-iot
+cd /home/pi/arm-optimize-iot
 ```
 
 ## Step 2 — Build llama.cpp for ARM64
@@ -34,13 +34,13 @@ On your development machine (after quantization):
 
 ```bash
 # From dev machine:
-scp models/qwen2-0.5b-q4_k_m.gguf pi@<rpi-ip>:/home/pi/optimize-arm-iot/models/
+scp models/qwen2-0.5b-q4_k_m.gguf pi@<rpi-ip>:/home/pi/arm-optimize-iot/models/
 ```
 
 Or download and quantize directly on the RPi5:
 
 ```bash
-cd /home/pi/optimize-arm-iot
+cd /home/pi/arm-optimize-iot
 python -m src.model_optimization.download_model
 python -m src.model_optimization.export_to_gguf
 python -m src.model_optimization.quantize_model
@@ -49,7 +49,7 @@ python -m src.model_optimization.quantize_model
 ## Step 4 — Generate Sensor Data
 
 ```bash
-cd /home/pi/optimize-arm-iot
+cd /home/pi/arm-optimize-iot
 python -m src.data_processing.sensor_generator --hours 24
 ```
 
@@ -71,9 +71,9 @@ Description=ARM AI Sensor Triage Alert Engine
 After=network.target
 
 [Service]
-ExecStart=/home/pi/optimize-arm-iot/venv/bin/python \
+ExecStart=/home/pi/arm-optimize-iot/venv/bin/python \
     -m src.alerting.alert_engine
-WorkingDirectory=/home/pi/optimize-arm-iot
+WorkingDirectory=/home/pi/arm-optimize-iot
 Restart=always
 User=pi
 
@@ -118,7 +118,7 @@ GPIO.output(18, GPIO.LOW)
 ## Step 7 — Benchmark on RPi5
 
 ```bash
-cd /home/pi/optimize-arm-iot
+cd /home/pi/arm-optimize-iot
 ./benchmark.sh
 ```
 

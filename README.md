@@ -38,7 +38,7 @@
 ## Quick Start
 
 ```bash
-git clone <repo> && cd optimize-arm-iot
+git clone <repo> && cd arm-optimize-iot
 ./setup.sh                                    # Build env + llama.cpp
 source venv/bin/activate
 python -m src.model_optimization.download_model  # Get Qwen2-0.5B Q4_K_M
